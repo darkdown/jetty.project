@@ -391,8 +391,6 @@ echo "Starting Jetty: "
 ::   else
 ::     echo "ok `date`"
 ::   fi
-::
-::   ;;
 :ok_chk_nostart
 call %RUN_CMD% start-log-file="%JETTY_START_LOG%"
 :ok_chk_start
@@ -436,8 +434,6 @@ if not "stop" == "%ACTION%" goto ok_chk_stop
 ::    rm -f "$JETTY_PID"
 ::    rm -f "$JETTY_STATE"
 ::    echo OK
-::
-::    ;;
 :ok_chk_stop
 if not "restart" == "%ACTION%" goto ok_chk_restart
 ::JETTY_SH=$0
@@ -484,8 +480,6 @@ goto ok_chk_run_demo
 ::    fi
 ::
 ::    exec "${RUN_CMD[@]}"
-::    ;;
-
 :ok_chk_run_demo
 
 if "check" == "%ACTION%" goto ok_chk_check
